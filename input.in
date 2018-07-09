@@ -1,0 +1,27 @@
+&INSET
+matrix_file = 'e40r0000.rua.txt' 
+mformat = 2 
+method = 5 
+precon = 7 
+nsubiters = 1000 
+krylovdirs = 10 
+restarts = 1 
+convgtol = 1.0e-100
+droptol =  1.0e-100
+fill_BL = 1500 
+fill_BU = 1500 
+fill_EU = 1500 
+fill_LF = 1500 
+fill_S = 1500 
+fill_SL = 1500 
+fill_SU = 1500 
+block_size = 2 
+nlev = 2 
+mreord  = 1 
+rscale_B  = 1 
+cscale_B  = 1
+rscale_S = 1 
+cscale_S = 1 
+pq_S    = 1 
+/
+

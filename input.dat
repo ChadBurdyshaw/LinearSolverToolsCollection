@@ -1,0 +1,48 @@
+# matrix file name
+e40r0000.rua.txt #gre_1107.rua.txt #med_block_matrix.txt #hor131.rua.txt #pores_1.rua.txt #hor131.rua.txt  #med_matrix2.txt #med_block_matrix.txt #sherman3.rua.txt #big_block_matrix.txt  #bcsstk19.rsa.txt #sherman2.rua.txt #bp_1000.rua.txt #mhd4800b.rua.txt #e40r0000.rua.txt #bfw398b.rua.txt #lund_a.rsa.txt #plat1919.rsa.txt #arc130.rua.txt #sherman3.rua.txt  #hor131.rua.txt #med_matrix2.txt #pores_1.rua.txt
+#format 1:Normal(ia,ja) 2:HarwellBoeing
+2
+# method
+5
+# preconditioner
+7
+# nsubiters (main or preconditioner)
+1000
+# krylov search directions
+10
+# GMRES restarts
+1
+# convergence tol
+1.0e-100
+#dropping tol
+1.0e-100
+# fill level B(L)
+1500  
+# fill level B(U)
+1500
+# fill level E(L^-1)
+1500
+# fill level (U^-1)F
+1500
+# fill level Schur S
+1500
+# fill level Schur L
+1500
+# fill level Schur U
+1500
+#local block size
+2 #3300  #3470
+#nlev (number of arms levels)
+2
+#mreord 0:indepset 1:pq
+1
+#row scaling
+1
+#column scaling
+1
+#row scaling Schur
+1
+#column scaling Schur
+1
+#pq Schur
+1

@@ -1,0 +1,11 @@
+&SETN
+     INFILE = 'New_vkiScRd.inp',
+     OUTFIL = 'New_vkiScRd_out.dat',
+     PLTFIL = 'New_vkiScRd_plt.dat',
+     DRVFIL = './deriv_files/New_vkiScRd_dFdvy2.dat',
+     DPLTFL = './deriv_files/New_vkiScRd_dFdvy2plt.dat',
+     PTBFIL = './ptbfiles/New_vkiScRd_dvy2.ptb',
+     DERIVF = 1,
+     HEPSCF = 0,
+     MBLDF  = 1,
+     RPHIF  = 1 /

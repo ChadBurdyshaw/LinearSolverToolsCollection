@@ -1,0 +1,69 @@
+#FFLAGS = -O2 -r8 -g -ftrace=full -elfence --chk
+FFLAGS = -O2 -r8 -g -elfence -fbounds-check
+#FFLAGS = -g -s
+LDFLAGS = -O2 
+#LDFLAGS = -g 
+
+#F = f90	
+#F = f95
+#F = ifort #work compiler
+F = g95 #laptop compiler
+#FFLAGS = -O4 -N113 -s -march=host
+#LDFLAGS = -O4 
+
+LIBS = -lm
+COBJ = 
+FOBJ = kinddefs.o blas.o matsol_lib.o armslib.o ilut.o ilutp.o pilu.o arms2.o linalg.o linSolver.o
+#FOBJ = kinddefs.o blas.o ilut.o linalg.o linSolver.o
+#FOBJ2 = kinddefs.o blas.o armslib.o ilut.o ilutp.o pilu.o arms2.o converter.o
+FOBJ2 = kinddefs.o converter.o
+
+linSolver: $(FOBJ)
+	$(F) $(LDFLAGS) -o linSolver $(FOBJ) $(LIBS)
+
+kinddefs.o: kinddefs.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+blas.o: blas.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+matsol_lib.o: ilut.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+armslib.o: ilut.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+ilut.o: ilut.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+ilutp.o: ilutp.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+pilu.o: pilu.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+arms2.o: arms2.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+linalg.o: linalg.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+linSolver.o: linSolver.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+converter.o: converter.f90
+	$(F) -c $(FFLAGS) $*.f90
+
+converter: $(FOBJ)
+	$(F) $(LDFLAGS) -o converter $(FOBJ2) $(LIBS)
+
+.f90.o:
+	$(F) -c $(FFLAGS) $*.f90
+
+clean:
+	rm *.o *.mod linSolver converter
+
+tags:
+	@find . -name '*.f90' | xargs etags;\
+	echo "To load tags into emacs use M-x visit-tags-table";\
+	echo "Use M-. to jump to function declarations "
